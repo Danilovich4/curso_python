@@ -1,31 +1,29 @@
 """
-Declare al menos 4 variables: una de cada tipo (int, float, str, bool).
-Realice una operación matemática con los números.
-Concatenar y mostrar un mensaje usando las cadenas.
-Incluya un comentario que explique cada variable.
+Declare 3 variables: a, b, y c con valores numéricos.
+Realice las siguientes operaciones:
+Suma, resta, y división entre las variables.
+Compare si a es mayor que b, y si b es igual a c.
+Use operadores lógicos para combinar comparaciones.
+Muestra los resultados usando print().
 """
 
-# Variables principales
-nombre = "Dani"  # Nombre de la persona
-edad = 30  # Edad en años
-altura = 1.84  # Altura en metros
-es_casado = False  # Estado civil (casado o no)
+#Variables
+a = 4
+b = 3.6
+c = 79.3
 
-# Variables adicionales
-apellido = "Lomo"  # Apellido de la persona
-peso = 80  # Peso en kilogramos
-otro_numero = 2.34  # Un número cualquiera para operaciones
-estado_activo = True  # Estado de actividad (True o False)
+#Operaciones
+suma =  a+b+c
+resta = c-a
+division = a/b
 
-# Operaciones
-edad_doble = edad * 2  # Calculamos el doble de la edad
-saludo = "Hola, " + nombre  # Mensaje personalizado
-calculo = peso / otro_numero  # Dividimos peso entre otro número
-concatenar = "El apellido es: " + apellido  # Mensaje con el apellido
+#Comparaciones
+print("a es mayor que b?", a > b)
+print("b es igual a c", b == c)
 
-# Mostrar información
-print(saludo)
-print("Tienes", edad, "años y el doble de tu edad es", edad_doble)
-print("Tu altura es", altura, "metros")
-print("¿Estás casado?", es_casado)
-print(concatenar)
+#Comparaciones logicas
+x = True
+y = False
+print("x and y:", x and y)
+print("x or y:", x or y)
+print("not x:", not x)
