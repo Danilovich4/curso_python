@@ -5,23 +5,23 @@ Concatenar y mostrar un mensaje usando las cadenas.
 Incluya un comentario que explique cada variable.
 """
 
-# Variables
-nombre = "Dani"
-edad = 30
-altura = 1.84
-es_casado = False
-#Nuevas variables
-apellido = "Lomo"
-peso = 80
-otro_numero = 2.34
-activo = True
+# Variables principales
+nombre = "Dani"  # Nombre de la persona
+edad = 30  # Edad en años
+altura = 1.84  # Altura en metros
+es_casado = False  # Estado civil (casado o no)
+
+# Variables adicionales
+apellido = "Lomo"  # Apellido de la persona
+peso = 80  # Peso en kilogramos
+otro_numero = 2.34  # Un número cualquiera para operaciones
+estado_activo = True  # Estado de actividad (True o False)
 
 # Operaciones
-edad_doble = edad * 2
-saludo = "Hola, " + nombre
-# Operaciones nuevas
-calculo = peso / otro_numero
-concatenar = "El apellido es: " + apellido
+edad_doble = edad * 2  # Calculamos el doble de la edad
+saludo = "Hola, " + nombre  # Mensaje personalizado
+calculo = peso / otro_numero  # Dividimos peso entre otro número
+concatenar = "El apellido es: " + apellido  # Mensaje con el apellido
 
 # Mostrar información
 print(saludo)
