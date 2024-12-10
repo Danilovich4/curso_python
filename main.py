@@ -1,29 +1,36 @@
 """
-Declare 3 variables: a, b, y c con valores numéricos.
-Realice las siguientes operaciones:
-Suma, resta, y división entre las variables.
-Compare si a es mayor que b, y si b es igual a c.
-Use operadores lógicos para combinar comparaciones.
-Muestra los resultados usando print().
+Pregunte al usuario un número y determine si es:
+Positivo.
+Negativo.
+Cero.
+Pregunte al usuario una calificación (0-100) y clasifique:
+>=90: Excelente.
+>=70: Bueno.
+>=50: Regular.
+<50: Insuficiente.
+Usa elif y else para manejar las condiciones.
 """
+#Pedirmos al usuario numero
+num = int(input("Añade un número: "))
 
-#Variables
-a = 4
-b = 3.6
-c = 79.3
+#Condicionales
+if num > 0:
+    print("Positivo")
+elif num < 0:
+    print("Negativo")
+else:
+    print("Cero")
 
-#Operaciones
-suma =  a+b+c
-resta = c-a
-division = a/b
+#Pedimoc calificacion
+cal = int(input("Calificacion del 0-100"))
 
-#Comparaciones
-print("a es mayor que b?", a > b)
-print("b es igual a c", b == c)
-
-#Comparaciones logicas
-x = True
-y = False
-print("x and y:", x and y)
-print("x or y:", x or y)
-print("not x:", not x)
+if cal >= 90 and cal < 100:
+    print("Excelente")
+elif cal >=70 and cal < 90:
+    print("Bueno")
+elif cal >=50 and cal < 70:
+    print("Regular")
+elif cal < 50 and cal >=0:
+    print("Insuficiente")
+else:
+    print("Error al introducir calificacions")
