@@ -1,33 +1,22 @@
 """
-Defina tres funciones:
-Una para calcular el cuadrado de un número.
-Una para calcular el cubo de un número.
-Una para verificar si un número es par o impar.
-Use las funciones en un programa principal (main()).
-Pida al usuario un número y:
-Muestre su cuadrado.
-Muestre su cubo.
-Indique si es par o impar.
+1. Use una lista para almacenar 5 números y:
+Agregue un sexto número.
+Elimine el tercer número.
+Imprima los números en orden inverso.
+2.Use un diccionario para almacenar información de una persona (nombre, edad, ciudad) y:
+Agregue una clave para la profesión.
+Elimine la clave ciudad.
+Imprima todos los valores del diccionario.
 """
 
-#Primera funcion
-def cuadrado_funcion(num):
-    return num**2
-#Segunda funcion
-def cubo_funcion(num):
-    return num**3
-#Tercera funcion
-def verificar (num):
-    par_impar = num % 2
-    if par_impar == 0:
-        print("Es par")
-    else:
-        print("Es impar")
-#Funcion main
-def main():
-    numero = int(input("Indica numero para hacer operaciones"))
-    print(cuadrado_funcion(numero))
-    print(cubo_funcion(numero))
-    print(verificar(numero))
-#Resultados
-main()
+#Lista
+numeros = [1,2,3,4,5]
+numeros.append(6)
+numeros.remove(3)
+print(numeros.reverse)
+
+#Diccionario
+persona = {"nombre": "Jon", "edad": 15, "ciudad": "Barna"}
+persona["profesion"] = "PO"
+del persona ["ciudad"]
+print(persona)
