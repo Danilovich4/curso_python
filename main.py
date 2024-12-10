@@ -1,38 +1,39 @@
 """
-Cree un archivo de texto llamado notas.txt y escriba 3 líneas con contenido.
-Lea el archivo y muestre el contenido línea por línea.
-Guarde un diccionario con al menos 3 claves en un archivo JSON.
-Lea el archivo JSON y muestre el contenido.
-Guarde una tabla de datos con al menos 3 filas en un archivo CSV.
-Lea el archivo CSV y muestre cada fila.
+1. Solicite al usuario dos números (a y b).
+2. Use una función para realizar las operaciones: suma, resta, multiplicación y división.
+3. Maneje los siguientes errores:
+   - Entrada inválida (ValueError).
+   - División entre cero (ZeroDivisionError).
+4. Asegúrate de mostrar un mensaje de error adecuado para cada caso.
 """
 
-#Archivo texto
-with open("notas.txt", "w") as archivo:
-    archivo.write("Hola\n")
-    archivo.write("que tal\n")
-    archivo.write("Fin\n")
-with open("notas.txt", "r") as archivo:
-    lectura = archivo.read()
-    print(lectura)
+# Solicitar números al usuario con manejo de errores
+def sol_num():
+    try:
+        a = int(input("Introduce un número a: "))
+        b = int(input("Introduce un número b: "))
+        return a, b
+    except ValueError:
+        print("Error: Debes introducir un número válido.")
+        return None
 
-#Archivo JSON
-import json
-dicc = {"edad": 15, "año": 2025, "lugar": "Barna"}
-with open("diccionario.json", "w") as archivo:
-    json.dump(dicc, archivo)
-with open("diccionario.json", "r") as archivo:
-    lectura = json.load(archivo)
-    print(lectura)
+# Realizar operaciones matemáticas
+def operaciones(a, b):
+    try:
+        suma = a + b
+        resta = a - b
+        multi = a * b
+        div = a / b
+        print(f"Resultados:\nSuma: {suma}\nResta: {resta}\nMultiplicación: {multi}\nDivisión: {div}")
+    except ZeroDivisionError:
+        print("Error: No se puede dividir entre cero.")
 
-#Archivo CSV
-import csv
-datos_csv = [["edad", 15], ["año", 2025], ["lugar", "Barna"]]
-with open("excel.csv", "w", newline="") as archivo:
-    escri = csv.writer(archivo)
-    escri.writerows(datos_csv)
-with open("excel.csv", "r") as archivo:
-    lectura = csv.reader(archivo)
-    print ("\nContenido del archivo:")
-    for i in lectura:
-        print(i)
+# Función principal
+def main():
+    numeros = sol_num()
+    if numeros:  # Verifica si `sol_num()` devolvió una tupla válida
+        a, b = numeros
+        operaciones(a, b)
+        print (numeros)
+
+main()
