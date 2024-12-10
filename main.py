@@ -1,36 +1,26 @@
 """
-Pregunte al usuario un número y determine si es:
-Positivo.
-Negativo.
-Cero.
-Pregunte al usuario una calificación (0-100) y clasifique:
->=90: Excelente.
->=70: Bueno.
->=50: Regular.
-<50: Insuficiente.
-Usa elif y else para manejar las condiciones.
+Pida al usuario un número n.
+Use un bucle for para imprimir todos los números desde 1 hasta n.
+Use un bucle while para calcular la suma de los números desde 1 hasta n.
+Incluya un caso donde se use break para detener el bucle si se llega a un número específico (por ejemplo, 5).
 """
-#Pedirmos al usuario numero
-num = int(input("Añade un número: "))
+#Pedimos numero
+num = int(input("Inserte un numero: "))
 
-#Condicionales
-if num > 0:
-    print("Positivo")
-elif num < 0:
-    print("Negativo")
-else:
-    print("Cero")
+#Bucle for
+for n in range(1, num):
+    print(n)
 
-#Pedimoc calificacion
-cal = int(input("Calificacion del 0-100"))
+#Bucle while
+con = int(1)
+while con <= num:
+    print(f"Suma del contador: {con}")
+    con += 1
 
-if cal >= 90 and cal < 100:
-    print("Excelente")
-elif cal >=70 and cal < 90:
-    print("Bueno")
-elif cal >=50 and cal < 70:
-    print("Regular")
-elif cal < 50 and cal >=0:
-    print("Insuficiente")
-else:
-    print("Error al introducir calificacions")
+#Caso break
+for numero in range (1, 7):
+    if numero == 5:
+        print("Se detiene bucle")
+        break
+    else:
+        print(numero)
