@@ -1,26 +1,33 @@
 """
-Pida al usuario un número n.
-Use un bucle for para imprimir todos los números desde 1 hasta n.
-Use un bucle while para calcular la suma de los números desde 1 hasta n.
-Incluya un caso donde se use break para detener el bucle si se llega a un número específico (por ejemplo, 5).
+Defina tres funciones:
+Una para calcular el cuadrado de un número.
+Una para calcular el cubo de un número.
+Una para verificar si un número es par o impar.
+Use las funciones en un programa principal (main()).
+Pida al usuario un número y:
+Muestre su cuadrado.
+Muestre su cubo.
+Indique si es par o impar.
 """
-#Pedimos numero
-num = int(input("Inserte un numero: "))
 
-#Bucle for
-for n in range(1, num):
-    print(n)
-
-#Bucle while
-con = int(1)
-while con <= num:
-    print(f"Suma del contador: {con}")
-    con += 1
-
-#Caso break
-for numero in range (1, 7):
-    if numero == 5:
-        print("Se detiene bucle")
-        break
+#Primera funcion
+def cuadrado_funcion(num):
+    return num**2
+#Segunda funcion
+def cubo_funcion(num):
+    return num**3
+#Tercera funcion
+def verificar (num):
+    par_impar = num % 2
+    if par_impar == 0:
+        print("Es par")
     else:
-        print(numero)
+        print("Es impar")
+#Funcion main
+def main():
+    numero = int(input("Indica numero para hacer operaciones"))
+    print(cuadrado_funcion(numero))
+    print(cubo_funcion(numero))
+    print(verificar(numero))
+#Resultados
+main()
