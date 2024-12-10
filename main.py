@@ -1,22 +1,38 @@
 """
-1. Use una lista para almacenar 5 números y:
-Agregue un sexto número.
-Elimine el tercer número.
-Imprima los números en orden inverso.
-2.Use un diccionario para almacenar información de una persona (nombre, edad, ciudad) y:
-Agregue una clave para la profesión.
-Elimine la clave ciudad.
-Imprima todos los valores del diccionario.
+Cree un archivo de texto llamado notas.txt y escriba 3 líneas con contenido.
+Lea el archivo y muestre el contenido línea por línea.
+Guarde un diccionario con al menos 3 claves en un archivo JSON.
+Lea el archivo JSON y muestre el contenido.
+Guarde una tabla de datos con al menos 3 filas en un archivo CSV.
+Lea el archivo CSV y muestre cada fila.
 """
 
-#Lista
-numeros = [1,2,3,4,5]
-numeros.append(6)
-numeros.remove(3)
-print(numeros.reverse)
+#Archivo texto
+with open("notas.txt", "w") as archivo:
+    archivo.write("Hola\n")
+    archivo.write("que tal\n")
+    archivo.write("Fin\n")
+with open("notas.txt", "r") as archivo:
+    lectura = archivo.read()
+    print(lectura)
 
-#Diccionario
-persona = {"nombre": "Jon", "edad": 15, "ciudad": "Barna"}
-persona["profesion"] = "PO"
-del persona ["ciudad"]
-print(persona)
+#Archivo JSON
+import json
+dicc = {"edad": 15, "año": 2025, "lugar": "Barna"}
+with open("diccionario.json", "w") as archivo:
+    json.dump(dicc, archivo)
+with open("diccionario.json", "r") as archivo:
+    lectura = json.load(archivo)
+    print(lectura)
+
+#Archivo CSV
+import csv
+datos_csv = [["edad", 15], ["año", 2025], ["lugar", "Barna"]]
+with open("excel.csv", "w", newline="") as archivo:
+    escri = csv.writer(archivo)
+    escri.writerows(datos_csv)
+with open("excel.csv", "r") as archivo:
+    lectura = csv.reader(archivo)
+    print ("\nContenido del archivo:")
+    for i in lectura:
+        print(i)
