@@ -1,14 +1,11 @@
-def decorador(funcion):
-    def nueva_funcion(*args, **kwargs):
-        print("Inicio de la funcion")
-        result = funcion(*args, **kwargs)
-        print("Fin de la funcion")
-        return result
-    return nueva_funcion
+class coche:
+    def __init__(self, marca, modelo, año):
+        self.marca = marca
+        self.modelo = modelo
+        self.año = año
+    def detalles (self):
+        print(f"Este coche es {self.marca} del modelo {self.modelo} y del año {self.año}")
 
-@decorador
-def sumar(a, b):
-    suma = a + b
-    print(f"La suma es: {suma}")
+mi_coche = coche("Toyota", "Prius", 2019)
 
-sumar(5, 3)
+mi_coche.detalles()
