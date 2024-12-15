@@ -1,10 +1,18 @@
 """
-1. Solicite al usuario dos números (a y b).
-2. Use una función para realizar las operaciones: suma, resta, multiplicación y división.
-3. Maneje los siguientes errores:
-   - Entrada inválida (ValueError).
-   - División entre cero (ZeroDivisionError).
-4. Asegúrate de mostrar un mensaje de error adecuado para cada caso.
+Crea un módulo llamado operaciones.py con las siguientes funciones:
+multiplicar(a, b)
+dividir(a, b) (maneja la división por cero).
+Organiza tu proyecto con la siguiente estructura:
+css
+Copiar código
+mi_proyecto/
+    main.py
+    utils/
+        __init__.py
+        operaciones.py
+Importa y usa las funciones de operaciones.py en main.py para:
+Multiplicar dos números ingresados por el usuario.
+Dividir dos números ingresados por el usuario.
 """
 
 # Solicitar números al usuario con manejo de errores
