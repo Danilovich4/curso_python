@@ -1,47 +1,26 @@
-"""
-Crea una clase base llamada Vehiculo.
+class Producto:
+    def __init__(self, nombre, precio, cantidad):
+        self.nombre = nombre
+        self.precio = precio
+        self.cantidad = cantidad
 
-Atributos: marca, modelo, año.
-Método: detalles, que imprime:
-css
-Copiar código
-Este vehículo es un [marca] [modelo] del año [año].
-Crea dos clases hijas: Coche y Moto.
+    def __str__(self):
+        return f"Producto {self.nombre}, Precio: {self.precio}€, Cantidad: {self.cantidad}"
 
-Sobrescribe el método detalles para añadir información adicional:
-Coche: "Es un coche con 4 ruedas."
-Moto: "Es una moto con 2 ruedas."
-Crea una función llamada mostrar_vehiculo que reciba un objeto de tipo Vehiculo y llame a su método detalles.
-
-Prueba:
-
-Crea objetos de las clases Coche y Moto.
-Usa la función mostrar_vehiculo para mostrar los detalles de ambos.
-"""
-class vehiculo:
-    def __init__ (self, marca, modelo, año):
-        self.marca = marca
-        self.modelo = modelo
-        self.año = año
-    def detalles(self):
-        print(f"Este vehículo es un {self.marca} {self.modelo} del año {self.año}.")
-
-class coche(vehiculo):
-    def detalles(self):
-        super().detalles()  # Llama al método 'detalles' de la clase base
-        print("Es un coche con 4 ruedas")
-
-class moto(vehiculo):
-    def detalles(self):
-        super().detalles()  # Llama al método 'detalles' de la clase base
-        print("Es una motodo con 2 ruedas")
-
-def mostrar_vehiculo (vehiculo):
-    vehiculo.detalles
+    def __add__(self, otro_producto):
+        # Verifica que los nombres coincidan
+        if self.nombre == otro_producto.nombre:
+            # Suma las cantidades y retorna un nuevo objeto Producto
+            return Producto(self.nombre, self.precio, self.cantidad + otro_producto.cantidad)
+        else:
+            raise ValueError("No se pueden sumar productos con nombres diferentes.")
 
 # Pruebas
-mi_coche = coche("Toyota", "Corolla", 2020)
-mi_moto = moto("Honda", "CBR", 2019)
+p1 = Producto("Manzana", 0.5, 10)
+p2 = Producto("Manzana", 0.5, 15)
 
-mostrar_vehiculo(mi_coche)
-mostrar_vehiculo(mi_moto)
+print(p1)
+print(p2)
+
+p3 = p1 + p2
+print(p3)
