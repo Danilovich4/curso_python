@@ -1,26 +1,41 @@
-class Producto:
-    def __init__(self, nombre, precio, cantidad):
-        self.nombre = nombre
-        self.precio = precio
-        self.cantidad = cantidad
+"""Crea una clase CuentaBancaria.
 
-    def __str__(self):
-        return f"Producto {self.nombre}, Precio: {self.precio}€, Cantidad: {self.cantidad}"
+Atributos: _saldo (protegido), _titular (protegido).
+Define un @property para:
+Obtener el saldo (saldo).
+Modificar el saldo (saldo.setter), asegurando que no sea negativo.
+Define un @property para:
+Obtener el nombre del titular (titular), que será de solo lectura.
+Prueba:
 
-    def __add__(self, otro_producto):
-        # Verifica que los nombres coincidan
-        if self.nombre == otro_producto.nombre:
-            # Suma las cantidades y retorna un nuevo objeto Producto
-            return Producto(self.nombre, self.precio, self.cantidad + otro_producto.cantidad)
-        else:
-            raise ValueError("No se pueden sumar productos con nombres diferentes.")
+Crea un objeto CuentaBancaria con un saldo inicial de 1000 y titular "Dani".
+Modifica el saldo a 1500 y verifica el valor.
+Intenta asignar un saldo negativo y verifica que lanza un error.
+Imprime el nombre del titular."""
+
+class CuentaBancaria:
+    def __init__(self, titular, saldo_inicial):
+        self.titular = titular
+        self._saldo = saldo_inicial
+
+    @property
+    def saldo(self):
+        return self._saldo_inicial
+
+    @saldo.setter
+    def saldo(self, valor):
+        if valor < 0:
+            raise ValueError("El valor saldo no puede ser negativo")
+        self._saldo = valor
+
+    @property
+    def titular(self):
+        return self.titular
 
 # Pruebas
-p1 = Producto("Manzana", 0.5, 10)
-p2 = Producto("Manzana", 0.5, 15)
-
-print(p1)
-print(p2)
-
-p3 = p1 + p2
-print(p3)
+cuenta = CuentaBancaria("Dani", 1000)
+print(cuenta.saldo)
+cuenta.saldo = 1500
+print(cuenta.saldo)
+cuenta.saldo = -500  # Esto debe generar un error
+print(cuenta.titular)
